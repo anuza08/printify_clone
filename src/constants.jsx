@@ -7,6 +7,16 @@ import {
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 
+export const navLinks = [
+  { label: "Catalog", href: "#" },
+  { label: "How it Works", href: "#" },
+  { label: "Pricing", href: "#" },
+  { label: "Blog", href: "#" },
+  { label: "Services", href: "#" },
+  { label: "Use Cases", href: "#" },
+  { label: "Need Help?", href: "#" },
+];
+
 export const reviewsData = [
   {
     img: "/assets/img1.jpg",

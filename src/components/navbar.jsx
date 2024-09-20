@@ -53,27 +53,13 @@ const Navbar = () => {
           <>
             <h1 style={styles.logoTxt}>Printify</h1>
             <div style={{ marginLeft: "12%" }}>
-              <a href="#" style={styles.navLinkStyle}>
-                Catalog
-              </a>
-              <a href="#" style={styles.navLinkStyle}>
-                How it Works
-              </a>
-              <a href="#" style={styles.navLinkStyle}>
-                Pricing
-              </a>
-              <a href="#" style={styles.navLinkStyle}>
-                Blog
-              </a>
-              <a href="#" style={styles.navLinkStyle}>
-                Services
-              </a>
-              <a href="#" style={styles.navLinkStyle}>
-                Use Cases
-              </a>
-              <a href="#" style={styles.navLinkStyle}>
-                Need Help?
-              </a>
+              <p style={styles.navLinkStyle}>Catalog</p>
+              <p style={styles.navLinkStyle}>How it Works</p>
+              <p style={styles.navLinkStyle}>Pricing</p>
+              <p style={styles.navLinkStyle}>Blog</p>
+              <p style={styles.navLinkStyle}>Services</p>
+              <p style={styles.navLinkStyle}>Use Cases</p>
+              <p style={styles.navLinkStyle}>Need Help?</p>
             </div>
           </>
         )}
