@@ -8,11 +8,13 @@ import Footer from "./footer";
 const Home = () => {
   return (
     <>
-      <Navbar />
-      <LandingPage />
-      <Info />
-      <Reviews />
-      <Footer />
+      <div>
+        <Navbar />
+        <LandingPage />
+        <Info />
+        <Reviews />
+        <Footer />
+      </div>
     </>
   );
 };

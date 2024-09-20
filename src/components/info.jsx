@@ -1,114 +1,49 @@
 import React from "react";
+import { getInfoStyles } from "../styles/styles";
 
 const Info = () => {
+  const styles = getInfoStyles();
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        alignItems: "flex-start",
-        padding: "6vh 6%",
-        width: "100%",
-        boxSizing: "border-box",
-        overflow: "hidden",
-        margin: 0,
-        backgroundColor: "#F5F5F5",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "20px",
-          marginBottom: "20px",
-          width: "30%",
-        }}
-      >
+    <div style={styles.container}>
+      <div style={styles.imgSection}>
         <img
           src="/assets/higher-profits.svg"
           alt="Robust Scaling"
-          style={{ width: "100px", height: "auto", gap: "20px" }}
+          style={styles.imgStyle}
         />
         <div>
-          <h4
-            style={{
-              margin: 0,
-              color: "#FF4E88",
-              textAlign: "center",
-              fontSize: "2rem",
-            }}
-          >
-            Higher Profits
-          </h4>
-          <p style={{ margin: 0, textAlign: "center", color: "gray" }}>
+          <h4 style={styles.txt}>Higher Profits</h4>
+          <p style={styles.subTxt}>
             Easily handle peak holiday seasons, with our wide network of
             partners and automatic routing functionality.
           </p>
         </div>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "20px",
-          marginBottom: "20px",
-          width: "30%",
-        }}
-      >
+      <div style={styles.imgSection}>
         <img
           src="/assets/best-selection.svg"
           alt="Robust Scaling"
-          style={{ width: "100px", height: "auto", gap: "20px" }}
+          style={styles.imgStyle}
         />
         <div>
-          <h4
-            style={{
-              margin: 0,
-              color: "#FF4E88",
-              textAlign: "center",
-              fontSize: "2rem",
-            }}
-          >
-            Robust Scaling
-          </h4>
-          <p style={{ margin: 0, textAlign: "center", color: "gray" }}>
+          <h4 style={styles.txt}>Robust Scaling</h4>
+          <p style={styles.subTxt}>
             Easily handle peak holiday seasons, with our wide network of
             partners and automatic routing functionality.
           </p>
         </div>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "20px",
-          marginBottom: "20px",
-          width: "30%",
-        }}
-      >
+      <div style={styles.imgSection}>
         <img
           src="/assets/robust-scaling.svg"
           alt="Best Selection"
-          style={{ width: "100px", height: "auto" }}
+          style={styles.imgStyle}
         />
         <div>
-          <h4
-            style={{
-              margin: 0,
-              color: "#FF4E88",
-              textAlign: "center",
-              fontSize: "2rem",
-            }}
-          >
-            Best Selection
-          </h4>
-          <p style={{ margin: 0, textAlign: "center", color: "gray" }}>
+          <h4 style={styles.txt}>Best Selection</h4>
+          <p style={styles.subTxt}>
             With 900+ products and top quality brands, you can choose the best
             products for your business.
           </p>
