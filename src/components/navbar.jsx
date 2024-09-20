@@ -33,8 +33,6 @@ const Navbar = () => {
       <div
         style={{
           ...styles.navContainer,
-          display: "flex",
-          alignItems: "center",
           filter: sideBar ? "blur(5px)" : "none",
           justifyContent: isMobile ? "space-between" : "flex-start",
         }}
@@ -52,14 +50,20 @@ const Navbar = () => {
         ) : (
           <>
             <h1 style={styles.logoTxt}>Printify</h1>
-            <div style={{ marginLeft: "12%" }}>
-              <p style={styles.navLinkStyle}>Catalog</p>
-              <p style={styles.navLinkStyle}>How it Works</p>
-              <p style={styles.navLinkStyle}>Pricing</p>
-              <p style={styles.navLinkStyle}>Blog</p>
-              <p style={styles.navLinkStyle}>Services</p>
-              <p style={styles.navLinkStyle}>Use Cases</p>
-              <p style={styles.navLinkStyle}>Need Help?</p>
+            <div style={styles.navLinkContainer}>
+              {[
+                "Catalog",
+                "How it Works",
+                "Pricing",
+                "Blog",
+                "Services",
+                "Use Cases",
+                "Need Help?",
+              ].map((link, index) => (
+                <p key={index} style={styles.navLinkStyle}>
+                  {link}
+                </p>
+              ))}
             </div>
           </>
         )}

@@ -1,10 +1,16 @@
 export const getNavbarStyles = () => ({
+  navLinkContainer: {
+    display: "flex", // Ensure links are displayed in a row
+    alignItems: "center",
+    marginLeft: "12%",
+  },
   navLinkStyle: {
     color: "gray",
     textDecoration: "none",
     fontSize: "16px",
     transition: "color 0.3s",
     padding: "10px",
+    margin: "0 10px", // Space out links
   },
   btn: {
     backgroundColor: "#FF4E88",
@@ -18,7 +24,6 @@ export const getNavbarStyles = () => ({
     width: "100px",
     transition: "background-color 0.3s ease",
   },
-
   navContainer: {
     height: "5vh",
     width: "100%",
@@ -28,14 +33,12 @@ export const getNavbarStyles = () => ({
     alignItems: "center",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
   },
-
   logoTxt: {
     color: "#FF4E88",
     display: "flex",
     textAlign: "center",
     marginLeft: "15px",
   },
-
   menuLogo: {
     color: "#ff4e88",
     margin: "0px 10px",
