@@ -45,51 +45,90 @@ export const getNavbarStyles = () => ({
   },
 });
 
-export const landingPageStyle = () => ({
-  container: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "5vh 3%",
-    width: "100%",
-    boxSizing: "border-box",
-    overflow: "hidden",
-  },
-  mainTxt: {
-    marginTop: "50px",
-    fontSize: "1.5rem",
-    height: "auto",
-    width: "auto",
-  },
-  btn: {
-    margin: "10px",
-    backgroundColor: "#FF4E88",
-    color: "white",
-    height: "8vh",
-    border: "none",
-    fontSize: "1.3rem",
-    width: "18vh",
-    fontWeight: "bold",
-    borderRadius: "5px",
-    cursor: "pointer",
-  },
-  btn2: {
-    margin: "10px",
-    backgroundColor: "white",
-    color: "#FF4E88",
-    height: "8vh",
-    border: "2px solid #FF4E88",
-    borderColor: "#FF4E88",
-    borderRadius: "5px",
-    width: "18vh",
-    fontWeight: "bold",
-    fontSize: "1.3rem",
-    transition: "background-color 0.3s, color 0.3s",
-    cursor: "pointer",
-  },
-  subTxt: { fontWeight: "bold", color: "#FF4E88", fontSize: "18px" },
-  gifStyle: { width: "40%", height: "auto", margin: "5px" },
-});
+export const landingPageStyle = (screenWidth) => {
+  const isMobile = screenWidth <= 768;
+
+  return {
+    container: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "5vh 3%",
+      width: "100%",
+      boxSizing: "border-box",
+      overflow: "hidden",
+    },
+    textAndGifContainer: {
+      display: "flex",
+      flexDirection: isMobile ? "column" : "row",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "20px",
+    },
+    textContainer: {
+      flex: 1,
+      textAlign: isMobile ? "center" : "left",
+    },
+    heading: {
+      color: "black",
+      fontSize: isMobile ? "2rem" : "3.5rem",
+      margin: 0,
+    },
+    mainTxt: {
+      marginTop: isMobile ? "20px" : "50px",
+      fontSize: "1.5rem",
+    },
+    ulStyle: {
+      color: "gray",
+      listStyleType: "none",
+      padding: 0,
+    },
+    liTxt: { fontSize: isMobile ? "15px" : "20px" },
+    btnContainer: {
+      display: "flex",
+      flexDirection: "row",
+      gap: "10px",
+      justifyContent: isMobile ? "center" : "flex-start",
+    },
+    btn: {
+      margin: "10px",
+      backgroundColor: "#FF4E88",
+      color: "white",
+      height: isMobile ? "4vh" : "8vh",
+      border: "none",
+      fontSize: isMobile ? "0.8rem" : "1.3rem",
+      width: isMobile ? "15vh" : "18vh",
+      fontWeight: "bold",
+      borderRadius: "5px",
+      cursor: "pointer",
+    },
+    btn2: {
+      margin: "10px",
+      backgroundColor: "white",
+      color: "#FF4E88",
+      height: isMobile ? "4vh" : "8vh",
+      border: "2px solid #FF4E88",
+      borderColor: "#FF4E88",
+      borderRadius: "5px",
+      fontSize: isMobile ? "0.8rem" : "1.3rem",
+      width: isMobile ? "15vh" : "18vh",
+      fontWeight: "bold",
+      transition: "background-color 0.3s, color 0.3s",
+      cursor: "pointer",
+    },
+    subTxt: {
+      fontWeight: "bold",
+      color: "#FF4E88",
+      fontSize: isMobile ? "14px" : "18px",
+    },
+    gifStyle: {
+      flex: 1,
+      width: isMobile ? "80%" : "50%",
+      height: "auto",
+      margin: isMobile ? "20px 0" : "5px",
+    },
+  };
+};
 
 export const getInfoStyles = () => ({
   container: {

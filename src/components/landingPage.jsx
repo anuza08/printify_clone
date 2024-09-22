@@ -1,23 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { landingPageStyle } from "../styles/styles";
 
 const LandingPage = () => {
-  const styles = landingPageStyle();
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const styles = landingPageStyle(screenWidth);
 
   return (
     <div style={styles.container}>
-      <div style={{ flex: 1.5 }}>
-        <h3 style={{ color: "black", fontSize: "3.5rem", margin: 0 }}>
-          Create and sell custom products
-        </h3>
+      <div style={styles.textContainer}>
+        <h3 style={styles.heading}>Create and sell custom products</h3>
         <div style={styles.mainTxt}>
-          <ul style={{ color: "gray" }}>
-            <li>100% Free to use</li>
-            <li>900+ High-Quality Products</li>
-            <li>Largest global print network</li>
+          <ul style={styles.ulStyle}>
+            <li style={styles.liTxt}>100% Free to use</li>
+            <li style={styles.liTxt}>900+ High-Quality Products</li>
+            <li style={styles.liTxt}>Largest global print network</li>
           </ul>
         </div>
-        <div style={{ gap: "5px" }}>
+        <div style={styles.btnContainer}>
           <button style={styles.btn}>Start for free</button>
           <button style={styles.btn2}>How it works</button>
         </div>
