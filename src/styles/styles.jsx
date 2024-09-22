@@ -1,8 +1,10 @@
 export const getNavbarStyles = () => ({
   navLinkContainer: {
-    display: "flex", // Ensure links are displayed in a row
+    display: "flex",
     alignItems: "center",
     marginLeft: "12%",
+    flexWrap: "wrap",
+    width: "100%",
   },
   navLinkStyle: {
     color: "gray",
@@ -10,7 +12,7 @@ export const getNavbarStyles = () => ({
     fontSize: "16px",
     transition: "color 0.3s",
     padding: "10px",
-    margin: "0 10px", // Space out links
+    margin: "0 10px",
   },
   btn: {
     backgroundColor: "#FF4E88",
@@ -25,13 +27,13 @@ export const getNavbarStyles = () => ({
     transition: "background-color 0.3s ease",
   },
   navContainer: {
-    height: "5vh",
+    height: "8vh",
     width: "100%",
-    color: "white",
     padding: "25px",
     display: "flex",
     alignItems: "center",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    boxSizing: "border-box",
   },
   logoTxt: {
     color: "#FF4E88",
@@ -56,7 +58,7 @@ export const landingPageStyle = (screenWidth) => {
       padding: "5vh 3%",
       width: "100%",
       boxSizing: "border-box",
-      overflow: "hidden",
+      overflowX: "hidden", // Prevent horizontal overflow
     },
     textAndGifContainer: {
       display: "flex",
@@ -64,6 +66,7 @@ export const landingPageStyle = (screenWidth) => {
       alignItems: "center",
       justifyContent: "center",
       gap: "20px",
+      flexWrap: "wrap", // Prevent content overflow
     },
     textContainer: {
       flex: 1,
@@ -77,7 +80,7 @@ export const landingPageStyle = (screenWidth) => {
     mainTxt: {
       marginTop: isMobile ? "20px" : "50px",
       fontSize: "1.5rem",
-      marginLeft: "20px",
+      marginLeft: isMobile ? "0" : "20px",
     },
     ulStyle: {
       color: "gray",
@@ -91,6 +94,7 @@ export const landingPageStyle = (screenWidth) => {
       gap: "10px",
       margin: "20px",
       justifyContent: isMobile ? "center" : "flex-start",
+      flexWrap: "wrap", // Ensure buttons wrap on smaller screens
     },
     btn: {
       margin: "10px",
@@ -110,12 +114,10 @@ export const landingPageStyle = (screenWidth) => {
       color: "#FF4E88",
       height: isMobile ? "4vh" : "8vh",
       border: "2px solid #FF4E88",
-      borderColor: "#FF4E88",
       borderRadius: "5px",
       fontSize: isMobile ? "0.8rem" : "1.3rem",
       width: isMobile ? "15vh" : "18vh",
       fontWeight: "bold",
-      transition: "background-color 0.3s, color 0.3s",
       cursor: "pointer",
     },
     subTxt: {
@@ -132,70 +134,67 @@ export const landingPageStyle = (screenWidth) => {
   };
 };
 
-export const getInfoStyles = () => ({
-  container: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "flex-start",
-    padding: "2vh 2%",
-    boxSizing: "border-box",
-    margin: 0,
-    backgroundColor: "#F5F5F5",
-    justifyContent: "center",
-  },
-  imgSection: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    gap: "20px",
-    marginBottom: "20px",
-    width: "30%",
-    textAlign: "center",
-    padding: "1%",
-  },
-  imgStyle: {
-    width: "100px",
-    height: "auto",
-    gap: "20px",
-  },
-  txt: {
-    margin: 0,
-    color: "#FF4E88",
-    textAlign: "center",
-    fontSize: "1rem",
-  },
-  subTxt: {
-    margin: 0,
-    textAlign: "center",
-    color: "gray",
-  },
-});
+export const getInfoStyles = (screenWidth) => {
+  const isMobile = screenWidth <= 768;
 
-export const getReviewStyles = () => ({
-  ctn: { padding: "5vh 5%", maxWidth: "1200px", margin: "0 auto" },
-  txtContainer: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    textAlign: "center",
-    marginBottom: "5vh",
-  },
-  mainTxt: { color: "black", fontSize: "2.5rem", margin: 0 },
-  subTxt: { fontSize: "1.2rem", color: "gray", maxWidth: "800px" },
-  imgStyle: {
-    width: "100%",
-    height: "auto",
-    maxHeight: "300px",
-    objectFit: "cover",
-  },
-  reviewTxt: { fontSize: "1.5rem", margin: "10px 0" },
-  userName: {
-    fontStyle: "italic",
-    fontWeight: "bold",
-    color: "#FF4E88",
-  },
-});
+  return {
+    container: {
+      display: "flex",
+      flexDirection: isMobile ? "column" : "row",
+      flexWrap: "wrap",
+      alignItems: "flex-start",
+      padding: "2vh 2%",
+      justifyContent: "center",
+    },
+    imgSection: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "20px",
+      width: isMobile ? "100%" : "30%",
+      textAlign: "center",
+      marginBottom: "20px",
+    },
+    imgStyle: {
+      width: isMobile ? "80px" : "100px",
+    },
+  };
+};
+
+export const getReviewStyles = (screenWidth) => {
+  const isMobile = screenWidth <= 768;
+
+  return {
+    ctn: {
+      padding: isMobile ? "3vh 3%" : "5vh 5%",
+      maxWidth: "1200px",
+      margin: "0 auto",
+    },
+    txtContainer: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      textAlign: "center",
+      marginBottom: isMobile ? "3vh" : "5vh",
+    },
+    mainTxt: {
+      color: "black",
+      fontSize: isMobile ? "2rem" : "2.5rem",
+      margin: 0,
+    },
+    subTxt: {
+      fontSize: isMobile ? "1rem" : "1.2rem",
+      color: "gray",
+      maxWidth: "800px",
+    },
+    imgStyle: {
+      width: "100%",
+      height: "auto",
+      maxHeight: isMobile ? "200px" : "300px",
+      objectFit: "cover",
+    },
+  };
+};
 
 export const getFooterStyles = () => ({
   ctn: {

@@ -67,7 +67,13 @@ const Navbar = () => {
             </div>
           </>
         )}
-        <button style={{ ...styles.btn, margin: isMobile ? "0 20%" : "0 10%" }}>
+        <button
+          style={{
+            ...styles.btn,
+            margin: isMobile ? "0 20%" : "0 0",
+            fontSize: isMobile ? "10px" : "13px",
+          }}
+        >
           My Store
         </button>
       </div>
