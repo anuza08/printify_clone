@@ -77,6 +77,7 @@ export const landingPageStyle = (screenWidth) => {
     mainTxt: {
       marginTop: isMobile ? "20px" : "50px",
       fontSize: "1.5rem",
+      marginLeft: "20px",
     },
     ulStyle: {
       color: "gray",
@@ -88,6 +89,7 @@ export const landingPageStyle = (screenWidth) => {
       display: "flex",
       flexDirection: "row",
       gap: "10px",
+      margin: "20px",
       justifyContent: isMobile ? "center" : "flex-start",
     },
     btn: {
